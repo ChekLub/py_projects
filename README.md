@@ -15,45 +15,6 @@ taster_wine.ipynb - решение задачи на python (pandas)
 
 Решено в pandas, визуализация matplotlib: гистограммы (bins), круговые диаграммы с детализацией сектора (pie), график рассеяния (scatter), столбчатые диаграммы (bar). Для разбора рецензий для выявления ключевых слов, влияющих на высокую оценку, использована библиотека nltk. 
 
-# Calendar_curr_SQL.txt
- Задача
---Существует таблица котировок финансовых инструментов
-create table Rate(
-id int not null,
-code varchar(50) not null,
-date datetime not null,
-value float not null
-)
-- Дата в поле date хранится без времени.
-- Записи в таблицу добавляются в день смены курса (не каждый день). Курс действует с даты установки по дату следующей установки (не включительно).
-
-1. Необходимо сгенерировать календарь по рабочим дням, поместить в таблицу Calendar за период c 05.06.2009 по 18.06.2009.
-2. Вывести значение курса по каждой валюте за каждый день периода с c 05.06.2009 по 18.06.2009 по каждой валюте.
-
-Схема действия курса:
-insert into rate (id, code, date, value) values (1,'EUR','20090605', 1.149) insert into rate (id, code, date, value) values (2,'EUR','20090615', 1.161) insert into rate (id, code, date, value) values (3,'EUR','20090617', 1.177) insert into rate (id, code, date, value) values (4,'USD','20090605', 1.625) insert into rate (id, code, date, value) values (5,'USD','20090615', 1.639) insert into rate (id, code, date, value) values (6,'USD','20090617', 1.644)
-
-Ожидаемый результат:
-EUR 2009-06-05 1.149 Friday
-EUR 2009-06-08 1.149 Monday
-EUR 2009-06-09 1.149 Tuesday
-EUR 2009-06-10 1.149 Wednesday
-EUR 2009-06-11 1.149 Thursday
-EUR 2009-06-15 1.161 Monday
-EUR 2009-06-16 1.161 Tuesday
-EUR 2009-06-17 1.177 Wednesday
-EUR 2009-06-18 1.177 Thursday
-USD 2009-06-05 1.625 Friday
-USD 2009-06-08 1.625 Monday
-USD 2009-06-09 1.625 Tuesday
-USD 2009-06-10 1.625 Wednesday
-USD 2009-06-11 1.625 Thursday
-USD 2009-06-15 1.639 Monday
-USD 2009-06-16 1.639 Tuesday
-USD 2009-06-17 1.644 Wednesday
-USD 2009-06-18 1.644 Thursday
-
-
 # currency_from_cbr_plot.ipynb
 Задача: построить график курса доллара, евро или йены за желаемый период, начиная с 01.01.2019, с ЦБ http://www.cbr.ru/scripts/XML_dynamic.asp?date_req1=01/01/2019&date_req2=10/02/2021&VAL_NM_RQ=R01235
 Вывести минимальный, максимальный и средний курс за период - цену и дату.
